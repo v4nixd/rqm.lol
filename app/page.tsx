@@ -2,64 +2,104 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col items-center">
+      <Image
+        className="w-lg h-min mb-8"
+        src="/Requiem-Logo-Plain.svg"
+        alt=""
+        width={300}
+        height={50}
+      />
+      <p className="max-w-3xl text-center text-content-base-secondary text-sm md:text-lg">
+        Requiem - небольшое, но растущее игровое коммьюнити в Discord. Сервер,
+        ивенты и инфраструктура вокруг игр - всё, что нужно, чтобы было куда
+        залететь поиграть и пообщаться
+      </p>
+      <div className="mt-16 max-w-6xl flex flex-col items-center gap-4 overflow-visible">
+        <h1 className="text-2xl md:text-5xl font-semibold">Что здесь есть</h1>
+        <p className="text-content-base-secondary">
+          Коротко о том, чем мы тут занимаемся
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <ActivityCard
+            color="bg-purple-500"
+            heading="Ивенты"
+            imagePath="/Requiem_Trophy9-ps.png"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Кастомки, мини-турниры и сезонные ивенты по разным играм
+          </ActivityCard>
+          <ActivityCard
+            color="bg-yellow-500"
+            heading="Розыгрыши"
+            imagePath="/Requiem_Giveaway.png"
           >
-            Documentation
-          </a>
+            Роли, внутриигровые штуки, иногда Nitro/Telegram Premium и прочие
+            бонусы
+          </ActivityCard>
+          <ActivityCard color="bg-pink-500" heading="Кино-ночи" imagePath="">
+            Фильмы/сериалы в войсах в лучшем качестве
+          </ActivityCard>
+          <ActivityCard
+            color="bg-cyan-500"
+            heading="Сервера и бот"
+            imagePath=""
+          >
+            Игровые сервера Requiem, собственный бот и система поиска тиммейтов
+            (в разработке)
+          </ActivityCard>
         </div>
-      </main>
+      </div>
     </div>
   );
+}
+
+function ActivityCard({
+  color,
+  heading,
+  imagePath,
+  children,
+}: {
+  color: string;
+  heading: string;
+  imagePath?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className={`relative flex flex-col justify-end bg-linear-to-b ${color} to-neutral-2 w-48 md:w-64 h-60 md:h-80 rounded-4xl border-2 border-neutral-2 overflow-hidden`}
+    >
+      {imagePath && (
+        <Image
+          className="absolute"
+          src={imagePath}
+          alt=""
+          width={256}
+          height={320}
+          unoptimized
+        />
+      )}
+      <div className="block w-full h-min p-4 z-10">
+        <h2 className="text-2xl font-bold">{heading}</h2>
+        <p className="text-sm">{children}</p>
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div className="text-start">
+  <p className="text-xl font-semibold">Что здесь есть:</p>
+  <ul className="list-disc list-inside space-y-1 max-w-xl text-content-base-secondary">
+    <li>Ивенты и турниры - мини-турики, кастомки, сезонные ивенты</li>
+    <li>
+      Розыгрыши и плюшки - роли, внутриигровые штуки, иногда Nitro/Telegram
+      Premium и т.п.
+    </li>
+    <li>Кино-ночи - смотрим фильмы/сериалы в войсах</li>
+    <li>
+      Сервера и бот - игровые сервера, свой бот и система поисков тиммейтов (в
+      разработке)
+    </li>
+  </ul>
+</div>; */
 }
