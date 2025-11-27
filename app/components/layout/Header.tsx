@@ -20,7 +20,7 @@ export default function Header({ actions, className }: HeaderProps) {
 
   return (
     <header
-      className={`mx-auto md:mt-4 md:rounded-2xl md:w-fit h-[56px] flex items-center justify-between md:p-2 p-4 top-0 z-50 bg-background-base-secondary ${
+      className={`mx-auto md:mt-4 md:rounded-2xl md:w-fit h-14 flex items-center justify-between md:p-2 p-4 top-0 z-50 bg-background-base-secondary ${
         className || ""
       }`}
     >
