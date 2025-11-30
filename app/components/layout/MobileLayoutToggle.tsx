@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { LinkItem } from "../../types/types";
-import { NavLink } from "./Header";
+import { LinkItem } from "@/app/types/types";
+import { NavLink } from "@/app/components/layout/Header";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 

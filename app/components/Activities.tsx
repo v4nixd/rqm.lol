@@ -1,12 +1,14 @@
 import Image from "next/image";
 
-import { ActivityItem } from "../types/types";
+import { ActivityItem } from "@/app/types/types";
+
+import Text from "@/app/components/ui/text";
 
 const ACTIVITIES = [
   {
     color: "bg-purple-500",
     title: "Ивенты",
-    description: "Кастомки, мини-турниры и сезонные ивенты по разным играм",
+    description: "Кастомки, мини-турниры и сезонные ивенты",
     imagePath: "/Requiem_Trophy9-ps.png",
   },
 ];
@@ -17,10 +19,10 @@ export default function Activities() {
   return (
     <div className="flex flex-col items-center">
       <div className="mt-16 mb-8 max-w-6xl flex flex-col items-center gap-4 overflow-visible">
-        <h1 className="text-2xl md:text-5xl font-semibold">Что здесь есть</h1>
-        <p className="text-content-base-secondary">
-          Коротко о том, чем мы тут занимаемся
-        </p>
+        <Text variant={"h1"} weight={"semibold"} color={"heading"}>
+          Что здесь есть
+        </Text>
+        <Text color={"secondary"}>Коротко о том, чем мы тут занимаемся</Text>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {activities.map((activity) => (
@@ -47,8 +49,10 @@ function ActivityCard({ color, title, description, imagePath }: ActivityItem) {
         />
       )}
       <div className="block w-full h-min p-4 z-10">
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="text-sm">{description}</p>
+        <Text variant={"h3"} weight={"bold"}>
+          {title}
+        </Text>
+        <Text variant={"small"}>{description}</Text>
       </div>
     </div>
   );

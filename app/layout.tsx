@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
-import Header from "./components/layout/Header";
+import ScrollProgress from "@/app/components/layout/ScrollProgress";
+import Header from "@/app/components/layout/Header";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased font-inter text-content-base-primary bg-background-base-primary text-`}
+        className={`${inter.variable} antialiased font-inter text-content-base-primary bg-background-base-primary`}
       >
+        <ScrollProgress />
         <Header />
         <div className="flex min-h-screen justify-center mt-8">{children}</div>
       </body>
