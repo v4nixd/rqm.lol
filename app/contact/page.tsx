@@ -9,7 +9,6 @@ import Divider from "@/app/components/layout/Divider";
 import Link from "next/link";
 import Button from "@/app/components/ui/button";
 import TelegramIcon from "@/app/components/icons/Telegram";
-import { redirect } from "next/navigation";
 
 export default function Contact() {
   return (
