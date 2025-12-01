@@ -74,16 +74,16 @@ function NavAction({ href, label, icon: Icon, className }: HeaderActivityItem) {
   return (
     <>
       {href && (
-        <Link
-          href={href}
+        <button
           className={cn(
-            "inline-flex items-center spaxe-x-1.5 py-2 px-4 rounded-xl hover:bg-neutral-alfa-tonal-2",
+            "inline-flex items-center spaxe-x-1.5 py-2 px-4 rounded-xl hover:bg-neutral-alfa-tonal-2 cursor-pointer",
             className
           )}
+          onClick={() => window.open(href, "_blank")}
         >
           {Icon && <Icon className="text-content-base-secondary w-4 h-4" />}
           <Text>{label}</Text>
-        </Link>
+        </button>
       )}
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "@/app/globals.css";
 
 import ScrollProgress from "@/app/components/layout/ScrollProgress";
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased font-inter text-content-base-primary bg-background-base-primary`}
       >
+        <Analytics />
         <ScrollProgress />
         <Header />
         <div className="flex min-h-screen justify-center mt-8">{children}</div>

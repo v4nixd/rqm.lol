@@ -28,6 +28,7 @@ const textVariants = cva("text-neutral-14 transition-all", {
       primary: "text-brand-primary-9",
       secondary: "text-content-base-secondary",
       danger: "text-red-600",
+      none: "",
     },
   },
   defaultVariants: {
