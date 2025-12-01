@@ -35,7 +35,9 @@ export default function Badge({
       )}
     >
       {Icon && <Icon className="w-4 h-4" />}
-      <Text variant={"small"}>{children}</Text>
+      <Text variant={"small"} color={"none"}>
+        {children}
+      </Text>
     </span>
   );
 }
