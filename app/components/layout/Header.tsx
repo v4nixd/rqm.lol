@@ -53,21 +53,19 @@ export default function Header({ className }: HeaderProps) {
 }
 
 function NavAction({ href, label, icon: Icon, className }: HeaderActivityItem) {
+  if (!href) return null;
+
   return (
-    <>
-      {href && (
-        <button
-          className={cn(
-            "inline-flex items-center spaxe-x-1.5 py-2 px-4 rounded-xl hover:bg-neutral-alfa-tonal-2 cursor-pointer",
-            className
-          )}
-          onClick={() => window.open(href, "_blank")}
-        >
-          {Icon && <Icon className="text-content-base-secondary w-4 h-4" />}
-          <Text>{label}</Text>
-        </button>
+    <button
+      className={cn(
+        "inline-flex items-center spaxe-x-1.5 py-2 px-4 rounded-xl hover:bg-neutral-alfa-tonal-2 cursor-pointer",
+        className
       )}
-    </>
+      onClick={() => window.open(href, "_blank", "noopener noreferrer")}
+    >
+      {Icon && <Icon className="text-content-base-secondary w-4 h-4" />}
+      <Text>{label}</Text>
+    </button>
   );
 }
 
