@@ -9,7 +9,7 @@ const ACTIVITIES = [
     color: "bg-purple-500",
     title: "Ивенты",
     description: "Кастомки, мини-турниры и сезонные ивенты",
-    imagePath: "/Requiem_Trophy9-ps.png",
+    imagePath: "/Requiem_Events_Trophy.webp",
   },
 ];
 
@@ -22,7 +22,9 @@ export default function Activities() {
         <Text variant={"h1"} weight={"semibold"} color={"heading"}>
           Что здесь есть
         </Text>
-        <Text color={"secondary"}>Коротко о том, чем мы тут занимаемся</Text>
+        <Text variant={"h2"} color={"secondary"}>
+          Коротко о том, чем мы тут занимаемся
+        </Text>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {activities.map((activity) => (
