@@ -36,7 +36,13 @@ export default function Contact() {
       <Button
         size={"lg"}
         className="bg-[#0088CC] text-content-base-primary mb-12"
-        onClick={() => window.open("https://t.me/rqm_support_bot", "_blank")}
+        onClick={() =>
+          window.open(
+            "https://t.me/rqm_support_bot",
+            "_blank",
+            "noopener noreferrer"
+          )
+        }
       >
         <TelegramIcon className="size-6 mr-2 text-content-base-primary" />
         <Text weight={"semibold"} variant={"h4"}>
